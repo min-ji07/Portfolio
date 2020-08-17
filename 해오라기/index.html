@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오</title>
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- <link rel="stylesheet" href="css/fullpage.min.css"> -->
+    <script src="js/jquery-3.5.0.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/fullpage.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <!-- jquery보다 밑에 있어야함-->
+</head>
+<body>
+    <div id="wrap">
+        <div class="mouse"></div>
+        <header id="header">
+            <div>
+                <h1><a href="#" class="logo">2020 민지</a></h1>
+                <div>
+                    <div>
+                        <button type="button" class="menu_button">
+                            <div class="menu1"></div>
+                            <div class="menu2"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- animate__backInRight -->
+            <div class="menu animated bounceInRight">
+                <ul>
+                    <li><a href="#section" class="section_about">about</a></li>
+                    <!-- 나에대해서 -->
+                    <li><a href="#content">portefolio</a></li>
+                    <!-- 능력 -->
+                    <li><a href="#blog">blog</a></li>
+                    <!-- 포트폴리오 프로젝트한거 올리기 / 날짜 포함 -->
+                    <li><a href="#footer">contact</a></li>
+                    <!-- 연락 -->
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+        </header>
+        
+        <!-- 마우스커서 -->
+        <!-- 부드럽게 어케하냐 -->
+        <!-- 페이지 총 두개고 한페이지 내려간 후
+        마우스 휠 내릴때마다 다른 페이지 소환 -->
+        <section class="section">
+            <!-- 첫페이지 -->
+            <!-- 내 사진, 간단한 소개 -->
+            <!-- 로딩화면 -->
+            <div class="progress" id="progress">
+                <span class="progress-bar"></span>
+                <span class="progress-text">0%</span>
+                <!-- https://notefolio.net/seonkk/175543 -->
+                <!-- 로딩 화면 이런식으로 포트폴리오 한글자씩 나오게해서 만드는것도 좋을듯 -->
+            </div>
+            <!-- 로딩화면 끝 -->
+            <div class="sec">
+                <div class="section_img">
+                    <img src="img/minji01.jpg" alt="">
+                    <h1 class="title"></h1>
+                    <div class="section_inner">
+                        <h2 class="title2">
+                            <!-- https://www.youtube.com/watch?v=XELoCdaeXls 글꼴 애니메이션 유툽 -->
+                            안녕하세요.</br>신입 퍼블리셔</br>
+                            민지의 포트폴리오 입니다~~~!
+                        </h2>
+                        <!-- 김민지 / 1992.07.14  -->
+                        <p>
+                            간단한 소개문구 넣기
+                        </p>
+                        <p>
+                            김민지</br>
+                            KIM MIN JI
+                        </p>
+                        <div>
+                            <button type="button" class="about_me">about me</button>
+                        </div>
+                    </div>
+                    <div class="popup" style="display: none;">
+                        <div class="popup_inner">
+                            <a href="#" class="popup_cross"><img src="img/cross.svg" alt=""></a>
+                            <div class="education_div">
+                                <h6 class="education">학력사항</h6>
+                                <div class="first">
+                                    <p>2011.03 - 2013.02</p>
+                                    </br>
+                                    <p>2008.03 - 2011.02</p>
+                                    </br>
+                                </div>
+                                <div>
+                                    <p>신흥대학교</p>
+                                    <p class="sodyd">사회복지전공</p>
+                                    <p>상우고등학교</p>
+                                    <p class="sodyd">문과계열</p>
+                                </div>
+                            </div>
+                            <div class="license_div">
+                                <h6 class="license">자격사항</h6>
+                                <div class="first">
+                                    <p>2019.08</p>
+                                    <p>2014.04</p>
+                                    <p>2013.07</p>
+                                    <p>2013.04</p>
+                                    <p>2013.04</p>
+                                </div>
+                                <div>
+                                    <p>정보처리산업기사(필기)</p>
+                                    <p>전산회계1급</p>
+                                    <p>운전면허2종보통</p>
+                                    <p>사회복지사2급</p>
+                                    <p>보육교사2급</p> 
+                                </div>
+                            </div>
+                            <div class="experience_div">
+                                <h6 class="experience">경력사항</h6>
+                                <div class="first">
+                                    <p>2020.01 - 2020.05</p>
+                                    </br>
+                                    <p>2016.07 - 2018.07</p>
+                                    </br>
+                                    <p>2014.10 - 2016.03</p>
+                                    </br>
+                                </div>
+                                <div>
+                                    <p>에이쏠</p>
+                                    <p class="sodyd">퍼블리싱 외 프론트개발</p>
+                                    <p>김창원세무회계사무소</p>
+                                    <p class="sodyd">기장대리 및 세무대리 세금신고, 결산</p>
+                                    <p>세무사최경민사무소</p>
+                                    <p class="sodyd">기장대리 및 세무대리 세금신고, 결산</p>
+                                </div>
+                            </div>
+                            <div class="skills_div">
+                                <h6 class="skills">교육사항</h6>
+                                <div class="first">
+                                    <p>2020.02.17 - 2020.04.13</p></br>
+                                    <p>2019.04.10 - 2019.10.31</p></br>
+                                </div>
+                                <div>
+                                    <p>UIUX 반응형웹디자인(웹표준, HTML5, CSS3) 웹 퍼블리셔 </p>
+                                    <P class="sodyd">HTML5, CSS3, Javascript</P>
+                                    <p>자바(JAVA) 프레임워크 개발자 양성과정</p>
+                                    <P class="sodyd">ORACLE, JAVA, Spring FrameWork, Mybatis, Ajax</P>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="popup_dimmed"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- https://www.youtube.com/watch?v=vh5hDOjeVvk
+        content 안에 요소 이런식으로 바뀔 화면 크기 지정해놓고 바꾸면 되지않은지 -->
+        <content id="content">
+            <div class="exp">
+                <div>
+                    <h6>Plan A</h6>
+                    <p>반응형 웹사이트 / 무료 템플릿 사용</p>
+                    <p>KH정보웅앵 학원 다니면서 한 파이널 프로젝트</p>
+                    <p>퍼블리싱 65%</p>
+                    <p>
+                        페이지 정리 - 
+                        나만의 여행, 테마여행, 여행지정보, 동행구하기, 여행후기, 로그인, 회원가입, 마이페이지 등 
+
+                    </p>
+                    <p>
+                        학원에서 Spring을 배우면서 만든 홈페이지<br>
+                        무료 템플릿으로 큰 틀을 잡았고
+                        세무사항을 수정하였습니다
+                    </p>
+                    <p>
+                        안에 스크롤 될 때 마다 설명이 바뀌어야함<br>
+                        제목<br>
+                        반응형 웹사이트(RESPONSIVE WEBSITE)<br>
+                        퍼블리싱 몇퍼<br>
+                        페이지 제목 입력 및 <br>
+                        사이트 설명<br>
+                        코드보기 - 깃허브연결<br>
+                        *설명(해당기업과 상관없음, 프로젝트, 만들어보기
+                        , 해당페이지는 실제 페이지가 아니며 개인 프로젝트로 사용되었습니다)<br>
+                    </p>
+                </div>
+                <div>
+                    <h6>실습1(이름바꾸기)</h6>
+                    <p>반응형 아님.. / 홈페이지 따라 만들어봄</p>
+                    <p>퍼블리싱100%</p>
+                    <p>
+                        현재페이지밖에 없음
+                    </p>
+                    <p>마우스(?이벤트) 애니메이션을 공부</p>
+                    <p>이것도 코드 올려야되나,,</p>
+                </div>
+                <div>
+                    <h6>웹사이트 솔루션</h6>
+
+                </div>
+                <div>
+                    <h6>포트폴리오 사이트</h6>
+
+                </div>
+            </div>
+            <div class="about section">
+                <div class="about_img">
+                    <a href="../planb/index.html" target="_blank">
+                        <img src="img/planb.png" alt="">
+                    </a>
+                    <div class="about_inner">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="about section">
+                <div class="about_img">
+                    <a href="../test01/index.html" target="_blank">
+                        <img src="img/Training.png" alt="">
+                    </a>
+                    <div class="about_inner">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="about section">
+                <div class="about_img">
+                    <a href="../assol/index.html" target="_blank">
+                        <img src="img/assol.png" alt="">
+                    </a>
+                    <div class="about_inner">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="about section">
+                <div class="about_img">
+                    <a href="" target="_blank">
+                        <img src="img/portfolio.png" alt="">
+                    </a>
+                    <div class="about_inner">
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- 마우스 커서로 한페이지씩넘김 -->
+            <div class="blog section" id="blog">
+                <!-- 
+                    photoshop, 웹 표준성 JAVA 이런거
+                    html, css, javascript, jquery 얼마나 되는지 만들어서 올리기 
+                -->
+                <!-- 프로젝트 앨범식으로 -->
+                <div class="blog_img">
+                    <!-- <img src="img/desigual-bg.svg" alt=""> -->
+                    <div class="blog_inner">
+                        <div class="blog_div">
+                            <a href="../planb/index.html">
+                                <!-- <img src="img/planb.png" alt=""> -->
+                                애니메이션, 프론트 등 앞으로 공부할 내용으로 채워질 페이지 입니다.
+                                <h6></h6>
+                            </a>
+                        </div>
+                        <div class="blog_div">
+                            <a href="../assol/index.html">
+                                <!-- https://github.com/min-ji07/assol -->
+                                <!-- <img src="img/assol.png" alt=""> -->
+                                <h6></h6>
+                            </a>
+                        </div>
+                        <div class="blog_div">
+                            <a href="../test01/index.html">
+                                <!-- <img src="img/Training.png" alt=""> -->
+                                <h6></h6>
+                            </a> 
+                        </div>
+                        
+                        <div class="blog_div">
+                            <a href="#">
+                                <!-- ../test01/index.html -->
+                                <!-- <img src="img/Training.png" alt=""> -->
+                                <h6></h6>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            <!-- 내 블로그 같은거 올리기 -->
+            <!-- 주소만 올려놓고 블로그(공부하는 내용 정리해놓은 곳) -->
+            <!-- <div class="blog">
+                <div class="blog_img">
+                    <img src="img/iota-bg.svg" alt="">
+                    <div class="blog_inner">
+                        <p>내용</p>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="ability">
+                <div class="ability_img">
+                    <img src="img/merge-bg.svg" alt="">
+                    <div class="ability_inner">
+                        
+                    </div>
+                </div>
+            </div> -->
+        </content>
+        <footer id="footer" class="section">
+            <!-- 연락처 같은거 -->
+            <!-- 감사합니다 -->
+            <!-- https://supercharge.io/ -->
+            <div class="footer_inner">
+                <div class="con">
+                    <p>연락하기</p>
+                    <!-- <p><a href="tel:010-4581-1897">010-4581-1897</p> -->
+                    <!-- <p><a href="mailto:86297534@naver.com">86297534@naver.com</p> -->
+                    <p><a href="https://github.com/min-ji07">https://github.com/min-ji07</a></p>
+                    <!-- <img src="img/light.png" alt=""> -->
+                </div>
+                <div class="test1">
+                    black
+                </div>
+
+            </div>
+            
+
+        </footer>
+    </div>
+    <script>
+    new fullpage('#wrap', {
+        licenseKey: '',
+        navigation: true,
+        navigationTooltips:['about', 'Plan A', '실습', 'assol','portfolio', 'blog', 'contact'],
+        scrollingSpeed: 1500,
+        keyboardScrolling : true
+    });
+    </script>
+</body>
+</html>

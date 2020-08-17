@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Weather</title>
+    <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-1.7.min.js" ></script>
+</head>
+<script>
+$(document).ready(function(){
+ 
+	$.getJSON("http://api.openweathermap.org/data/2.5/weather?id=1835847&appid=d5948ec3ace590812f0049bbdb822c43&units=metric",function(data){	
+	var cTemp = data.main.temp,	
+		cLowTemp = data.main.temp_min,	
+		cHighTemp = data.main.temp_max,
+		chumidity = data.main.humidity,
+		cIcon = data.weather[0].icon,	
+		now = new Date(),
+        Cmonth = now.getMonth() + 1,
+		cTime = now.getFullYear() + '-' + Cmonth +'-' + now.getDate() + '/' + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds(),
+		//현재시간: 2017-4-19/12:1:0
+ 
+		
+		iconUrl = 'http://openweathermap.org/img/w/';		
+		
+	$(".ctemp").append(cTemp);	
+	$(".ctime").append(cTime);	
+	//cTemp.appendTo($(".ctemp"));	
+	$(".clowtemp").append(cLowTemp);	
+	$(".chightemp").append(cHighTemp);	
+	$(".cicon").append('<img src="' + iconUrl + cIcon + '.png" alt="">');	
+    });	
+ 
+});
+ 
+</script>
+<body>
+<h1>weather api</h1>
+<div class="ctime">현재시간:  </div>
+<div class="ctemp">현재 온도: </div>
+<div class="clowtemp">최저 온도: </div>
+<div class="chightemp">최고 온도: </div>
+<div class="cicon">아이콘 : </div>
+<!-- HTML -->
+</body>
+</html>

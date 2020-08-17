@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>MouseWheel</title>
+    <style type="text/css">
+        html,body{ margin:0; padding:0; width:100%; height:100%;}
+        .box{ width:100%; height:100%; position:relative; color:#ffffff; font-size:24pt;}
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var elm = ".box";
+            $(elm).each(function (index) {
+                // 개별적으로 Wheel 이벤트 적용
+                console.log((elm).each);
+                $(this).on("mousewheel DOMMouseScroll", function (e) {
+                    //파이어폭스는 DOMMouseScroll 이벤트가 대신
+                    e.preventDefault(); // 클릭시 다른 태그에 이벤트 전파를 막음
+                    var delta = 0;
+                    if (!event) event = window.event;
+                    // 만약 event가 아니면 window.event 는 윈도우 켜지면 이벤트임
+
+                    if (event.wheelDelta) {
+                        console.log('wheelDelta');
+                        console.log(event.wheelDelta);
+                        //wheelDelta 는 마우스휠이 얼마나 회전했는지 나타냄
+                        delta = event.wheelDelta / 120;
+                        // 120만큼 회전
+                        // 위로 올리면 120 밑으로 내리면 -120나옴
+                        // if (window.opera) delta = -delta;
+                        // 이거는 오페라 브라우저일때같음
+                    }else if (event.detail) // 이건 뭐지 0 나오는데
+                        delta = -event.detail / 3;
+                    var moveTop = $(window).scrollTop();
+                    var elmSelecter = $(elm).eq(index);
+                    // 마우스휠을 위에서 아래로
+                    if (delta < 0) {
+                        if ($(elmSelecter).next() != undefined) {
+                            try{
+                                moveTop = $(elmSelecter).next().offset().top;
+                            }catch(e){}
+                        }
+                    // 마우스휠을 아래에서 위로
+                    } else {
+                        if ($(elmSelecter).prev() != undefined) {
+                            try{
+                                moveTop = $(elmSelecter).prev().offset().top;
+                            }catch(e){}
+                        }
+                    }
+                     
+                    // 화면 이동 0.8초(800)
+                    $("html,body").stop().animate({
+                        scrollTop: moveTop + 'px'
+                    }, {
+                        duration: 800, complete: function () {
+                        }
+                    });
+                });
+            });
+        }
+
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                if($(this).scrollTop() > 0){
+                    console.log('0보다큼');
+                    console.log($(this).scrollTop());
+                }else{
+                    console.log('0보다작음');
+                    console.log($(this).scrollTop());
+                }
+            })
+        })
+        
+    </script>
+</head>
+<body>
+    <div class="box" style="background-color:red;">1</div>
+    <div class="box" style="background-color:orange;">2</div>
+    <!-- <div class="box" style="background-color:yellow;">3</div>
+    <div class="box" style="background-color:green;">4</div>
+    <div class="box" style="background-color:blue;">5</div>
+    <div class="box" style="background-color:indigo;">6</div>
+    <div class="box" style="background-color:violet;">7</div> -->
+</body>
+</html>
